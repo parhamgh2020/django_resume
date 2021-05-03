@@ -14,8 +14,8 @@ def home(request):
         if form.is_valid():
             cd = form.cleaned_data
             subject = f"{cd['name']} recommends you read"
-            message = cd['comment']
-            send_mail(subject, message, 'admin@myblog.com', ('parham.ghashghaee@gmail.com',))
+            message = f"name: {cd['name']} \n email: {cd['email']} \n comment: {cd['comment'}"
+            send_mail('from resume site', message, 'admin@myblog.com', ('parham.ghashghaee@gmail.com',))
             sent = True
     form = EmailPostForm()
     return render(request, 'home.html', {'ip_count': ip_count,
