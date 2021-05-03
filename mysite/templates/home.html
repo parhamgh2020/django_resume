@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load widget_tweaks %}
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -17,9 +18,8 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href='{% static "css/styles.css" %}' rel="stylesheet"/>
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-</head>
-<!-- Hotjar Tracking Code for http://parhamgh.pythonanywhere.com/ -->
-<script>
+    <!-- Hotjar Tracking Code for http://parhamgh.pythonanywhere.com/ -->
+    <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
         h._hjSettings={hjid:2368385,hjsv:6};
@@ -28,14 +28,9 @@
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+</head>
 
-
-
-
-
-
-
-</script>
 <body style="background-color: #e3ebf3 " id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top color-class" id="sideNav">
@@ -54,6 +49,7 @@
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#comments">Comments</a></li>
         </ul>
     </div>
 </nav>
@@ -240,6 +236,25 @@
                     GRD:100 in Python Programming - Sematec IT Professional Training Center Certification
                 </li>
             </ul>
+        </div>
+    </section>
+    <hr class="m-0"/>
+    <section class="resume-section" id="comments">
+        <div class="resume-section-content">
+            <h2 class="mb-5"><u>Comments</u></h2>
+            {% if sent %}
+            <h3>thank you for comment ...</h3>
+            {% endif %}
+            <div class="col-sm-10 col-md-8 col-12">
+                <form method="post" class="form-group">{% csrf_token %}
+                    <p>I will appreciate your comments on my resume:</p>
+                    <br>
+                    <p>Name: {{form.name|add_class:"form-control"}}</p>
+                    <p>Email: {{form.email|add_class:"form-control"}}</p>
+                    <p>Comment: {{form.comment|add_class:"form-control"}}</p>
+                    <input class="btn btn-primary" type="submit" value="submit">
+                </form>
+            </div>
         </div>
     </section>
     <hr class="m-0"/>
