@@ -57,7 +57,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV '/home/p/Desktop/resume_site/mysite/.myenv'
+set -gx VIRTUAL_ENV '/home/p/Desktop/reme_site/django_resume/mysite/.myenv'
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | head -c 1) -lt 3

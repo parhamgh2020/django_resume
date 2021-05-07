@@ -1,4 +1,4 @@
-#!/home/p/Desktop/resume_site/mysite/.myenv/bin/python
+#!/home/p/Desktop/reme_site/django_resume/mysite/.myenv/bin/python
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

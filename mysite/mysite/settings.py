@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-1bngr*r6nyw)1u--+b1xhu#41g^=nu6tz-3b*=e+10wprvk2vz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['parhamgh.pythonanywhere.com']
+# ALLOWED_HOSTS = ['parhamgh.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -128,8 +129,8 @@ STATICFILES_DIRS = [
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 # E-mail
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')

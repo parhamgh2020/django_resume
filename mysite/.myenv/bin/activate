@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='/home/p/Desktop/resume_site/mysite/.myenv'
+VIRTUAL_ENV='/home/p/Desktop/reme_site/django_resume/mysite/.myenv'
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
