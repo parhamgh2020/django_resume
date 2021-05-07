@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 {% load widget_tweaks %}
+{% load ratings %}
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -17,6 +18,8 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css"/>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href='{% static "css/styles.css" %}' rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
     <!-- Hotjar Tracking Code for http://parhamgh.pythonanywhere.com/ -->
     <script>
@@ -28,6 +31,10 @@
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+
+
+
+
     </script>
 </head>
 
@@ -251,8 +258,8 @@
                     <p>I will appreciate your comments on my resume:</p>
                     <br>
                     <p>Name: {{form.name|add_class:"form-control"}}</p>
-                    <p>Email: {{form.email|add_class:"form-control"}}</p>
                     <p>Comment: {{form.comment|add_class:"form-control"}}</p>
+                    <p>Rate: {% ratings obj %}</p>
                     <input class="btn btn-primary" type="submit" value="submit">
                 </form>
             </div>

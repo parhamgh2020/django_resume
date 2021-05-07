@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1bngr*r6nyw)1u--+b1xhu#41g^=nu6tz-3b*=e+10wprvk2vz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['parhamgh.pythonanywhere.com']
 
 # Application definition
 
@@ -36,8 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'visitorCounter',
-    'widget_tweaks'
+    'visitorCounter.apps.VisitorcounterConfig',
+    'widget_tweaks',
+    'star_ratings',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,6 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_USE_TLS = True
+
+STAR_RATINGS_RERATE = False
+STAR_RATINGS_ANONYMOUS = True
